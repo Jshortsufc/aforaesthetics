@@ -1,0 +1,10 @@
+{
+  // Cloudflare Workers config for the A for Aesthetics static site.
+  // The build's deploy command (`npx wrangler deploy`) reads this to know
+  // which Worker to update and that the website lives in the ./site folder.
+  "name": "aforaesthetics",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./site"
+  }
+}
