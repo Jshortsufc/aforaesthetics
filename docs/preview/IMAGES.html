@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en-GB"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A for Aesthetics — Image Checklist</title>
+<style>
+:root{--ink:#1E1719;--soft:#6E6467;--bg:#FBF7F6;--accent:#C56F64;--coral:#E08E83;--line:#e7dcd9;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.65;}
+.wrap{max-width:820px;margin:0 auto;padding:2.5rem 1.3rem 4rem;}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;line-height:1.15;color:var(--ink);}
+h1{font-size:2.1rem;border-bottom:3px solid var(--coral);padding-bottom:.4rem;margin-bottom:1.2rem;}
+h2{font-size:1.5rem;margin-top:2.2rem;color:var(--accent);}
+h3{font-size:1.15rem;}
+a{color:var(--accent);}
+code{background:#f2e6e3;padding:.15em .4em;border-radius:5px;font-size:.9em;}
+pre{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1rem;overflow:auto;font-size:.85rem;}
+pre code{background:none;padding:0;}
+table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:.92rem;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 6px 18px -12px rgba(30,23,25,.2);}
+th,td{text-align:left;padding:.7rem .8rem;border-bottom:1px solid var(--line);vertical-align:top;}
+th{background:var(--coral);color:#fff;font-family:inherit;}
+tr:last-child td{border-bottom:0;}
+ul{padding-left:1.2rem;}
+li{margin-bottom:.4rem;}
+input[type=checkbox]{margin-right:.4rem;}
+blockquote{border-left:3px solid var(--coral);margin:1rem 0;padding:.3rem 1rem;color:var(--soft);}
+.disc{background:#fff;border:1px solid var(--line);border-left:3px solid var(--coral);border-radius:8px;padding:1rem;margin-top:1.5rem;font-size:.9rem;color:var(--soft);}
+</style>
+</head><body><div class="wrap"><h1>Image checklist — A for Aesthetics</h1>
+<p>Every image slot in the site is a labelled placeholder (search the HTML for <code>hero-media--placeholder</code>, or the <code>&lt;figure&gt;</code> blocks on treatment pages). Drop a file into <code>/img/</code> with the filename shown, then replace the placeholder <code>&lt;div&gt;</code> with an <code>&lt;img src="/img/FILENAME" alt="..."&gt;</code>.</p>
+<h2>Read this first (important for a clinic)</h2>
+<ul>
+<li><strong>Your own photos are best.</strong> Real clinic, real practitioner, and real before/afters (with written client consent) beat any stock image — and they boost your Google trust ranking. Use these wherever you can.</li>
+<li><strong>Don't use random images off Google.</strong> Most are copyrighted, and any photo of a face implies that person is your client and endorses treatment (a consent issue). Only use images you own or that are licensed for commercial use.</li>
+<li><strong>Free, commercially-licensed sources:</strong> Unsplash, Pexels, Pixabay. <strong>Paid (higher quality):</strong> Adobe Stock, iStock.</li>
+<li>Save as JPG or WebP, compressed. Landscape shots ~1600px wide; portraits ~1200px wide.</li>
+</ul>
+<h2>The list</h2>
+<table>
+<thead>
+<tr>
+<th>Filename</th>
+<th>Where it's used</th>
+<th>Shape</th>
+<th>What to use</th>
+<th>Stock search terms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hero.jpg</code></td>
+<td>Home hero</td>
+<td>Portrait 4:5 (~1200×1500)</td>
+<td>Eleana at work, a calm treatment room, or an elegant abstract</td>
+<td>"aesthetics clinic treatment room", "facial treatment nurse", "minimal beauty clinic"</td>
+</tr>
+<tr>
+<td><code>eleana.jpg</code></td>
+<td>Home + About</td>
+<td>Portrait (~1000×1250)</td>
+<td>A real, warm photo of Eleana — ideally in clinic</td>
+<td><em>your own photo</em></td>
+</tr>
+<tr>
+<td><code>og-image.jpg</code></td>
+<td>Social sharing (all pages)</td>
+<td>1200×630</td>
+<td>Logo on brand background, or clinic shot</td>
+<td><em>make from your logo</em></td>
+</tr>
+<tr>
+<td><code>dermal-fillers.jpg</code></td>
+<td>Dermal fillers page</td>
+<td>Landscape 16:9</td>
+<td>Cheek/jaw treatment or elegant product/texture</td>
+<td>"dermal filler treatment", "facial contour aesthetic"</td>
+</tr>
+<tr>
+<td><code>anti-ageing.jpg</code></td>
+<td>Anti-ageing page</td>
+<td>16:9</td>
+<td>Fresh skin close-up / skincare texture</td>
+<td>"healthy glowing skin close up", "skincare texture neutral"</td>
+</tr>
+<tr>
+<td><code>skin-boosters.jpg</code></td>
+<td>Skin boosters page</td>
+<td>16:9</td>
+<td>Skin/glow / injectable hydration context</td>
+<td>"glowing skin hydration", "skin booster treatment"</td>
+</tr>
+<tr>
+<td><code>fat-dissolving.jpg</code></td>
+<td>Fat dissolving page</td>
+<td>16:9</td>
+<td>Chin/jaw contour or clean clinical shot</td>
+<td>"chin contour aesthetic", "non surgical body clinic"</td>
+</tr>
+<tr>
+<td><code>favicon.png</code></td>
+<td>Browser tab</td>
+<td>(already set — your A-mark)</td>
+<td><em>done</em></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3>Optional (nice to have)</h3>
+<ul>
+<li><code>lip-fillers.jpg</code> and <code>anti-wrinkle.jpg</code> — those two pages don't have an inline image slot yet, but I can add one if you want them to match the others.</li>
+<li>Blog article header images — the guides are currently clean text; add headers if you'd like more visual pages.</li>
+</ul>
+<h2>Palette to match</h2>
+<p>Pick images with soft, warm, coral/blush/neutral tones so they sit with the brand (<code>#e08e83</code>). Avoid cold blue-toned or heavily filtered stock — it'll clash.</p></div></body></html>

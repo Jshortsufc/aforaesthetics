@@ -1,0 +1,15 @@
+# Cloudflare Pages redirects — old WordPress URLs -> new pages
+/anti-wrinkle/                                    /anti-wrinkle-injections   301
+/anti-wrinkle-anti-ageing-treatments/             /anti-wrinkle-injections   301
+/anti-ageing-treatments/                          /anti-ageing               301
+/lip-fillers-enhancement-augmentation/            /lip-fillers               301
+/lip-fillers-enhancement-augmentation-treatments/ /lip-fillers               301
+/treatments/                                      /#services                 301
+/advanced-treatments/                             /advanced-treatments       301
+/our-prices/                                      /our-prices                301
+/faq/                                             /faq                       301
+/contact/                                         /contact                   301
+/blog/                                            /blog                      301
+/privacy-policy/                                  /privacy-policy            301
+/terms-conditions/                                /terms-conditions          301
+/home/                                            /                          301
