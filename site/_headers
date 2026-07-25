@@ -1,0 +1,5 @@
+# TEMPORARY SANDBOX GUARD — REMOVE BEFORE GOING LIVE
+# This tells search engines not to index the site while it's a pre-launch sandbox.
+# DELETE THIS ENTIRE FILE (or this block) at go-live so the real site can be indexed.
+/*
+  X-Robots-Tag: noindex, nofollow
