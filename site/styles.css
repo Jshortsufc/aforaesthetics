@@ -16,6 +16,7 @@
   --accent:     #E08E83;   /* brand coral-rose — buttons, links, accents   */
   --accent-deep:#C56F64;   /* darker coral — hover / better contrast       */
   --gold:       #DDB0A8;   /* soft dusty-rose — fine detail lines          */
+  --star:       #E7A33E;   /* warm gold — review star ratings              */
 
   /* ---- derived ---- */
   --line:       color-mix(in srgb, var(--ink) 12%, transparent);
@@ -289,7 +290,7 @@ a.card:hover h3 { color: var(--accent-deep); }
 .quote p { font-family: var(--display); font-style: italic; font-size: 1.08rem; color: var(--ink); position: relative; }
 .quote .who { display: flex; align-items: center; gap: .7rem; margin-top: 1.1rem; font-weight: 800; font-size: .95rem; }
 .quote .who span { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(150deg, var(--blush), #fff); border: 1px solid var(--gold-soft); color: var(--accent-deep); display: grid; place-items: center; font-family: var(--display); }
-.stars { color: var(--gold); letter-spacing: 3px; font-size: .95rem; margin-bottom: .2rem; }
+.stars { color: var(--star); letter-spacing: 2px; font-size: 1.05rem; margin-bottom: .2rem; }
 
 /* ---------- FAQ ---------- */
 .faq { max-width: 780px; margin-inline: auto; }
