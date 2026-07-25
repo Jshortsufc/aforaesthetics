@@ -301,6 +301,15 @@ a.card:hover h3 { color: var(--accent-deep); }
 .price-row:hover { background: color-mix(in srgb, var(--blush) 40%, transparent); }
 .price-row .name { font-weight: 700; }
 .price-row .amt { font-family: var(--display); color: var(--accent-deep); white-space: nowrap; }
+/* Prices page: quick-jump chips + two-column layout */
+.price-jump { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.6rem 0 .3rem; }
+.price-jump a { font-size: .85rem; font-weight: 700; color: var(--ink-soft); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: .4rem .9rem; }
+.price-jump a::after { display: none; }
+.price-jump a:hover { background: var(--blush); color: var(--ink); border-color: transparent; }
+.price-columns { column-count: 2; column-gap: 2.6rem; margin-top: 1.8rem; }
+.price-block { break-inside: avoid; -webkit-column-break-inside: avoid; margin-bottom: 1.9rem; scroll-margin-top: 92px; }
+.price-block h2 { margin-top: 0; }
+@media (max-width: 760px) { .price-columns { column-count: 1; } }
 
 /* ---------- testimonials ---------- */
 .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.35rem; }
