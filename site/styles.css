@@ -151,6 +151,23 @@ p  { margin: 0 0 1rem; }
 .nav-cta { display: flex; align-items: center; gap: .75rem; }
 .nav-toggle { display: none; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: .5rem .6rem; cursor: pointer; color: var(--ink); }
 .nav-toggle svg { display: block; }
+/* Treatments dropdown */
+.nav-links .has-dropdown { position: relative; }
+.nav-links .has-dropdown > a { display: inline-flex; align-items: center; gap: .28rem; }
+.nav-links .has-dropdown::after { content: ""; position: absolute; left: 0; right: -1rem; top: 100%; height: .8rem; }
+.nav-links .dropdown {
+  position: absolute; top: 100%; left: 0; margin-top: .55rem; min-width: 220px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow); padding: .45rem; list-style: none;
+  opacity: 0; visibility: hidden; transform: translateY(6px);
+  transition: opacity .18s var(--ease), transform .18s var(--ease), visibility .18s; z-index: 60;
+}
+.nav-links .has-dropdown:hover .dropdown,
+.nav-links .has-dropdown:focus-within .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-links .dropdown li { width: 100%; }
+.nav-links .dropdown a { display: block; padding: .55rem .7rem; border-radius: 8px; font-size: .9rem; font-weight: 600; white-space: nowrap; color: var(--ink-soft); }
+.nav-links .dropdown a::after { display: none; }
+.nav-links .dropdown a:hover { background: var(--blush); color: var(--ink); }
 
 @media (max-width: 1024px) {
   .nav-links { display: none; }
@@ -164,6 +181,9 @@ p  { margin: 0 0 1rem; }
   .nav[data-open="true"] .nav-links li { width: 100%; }
   .nav[data-open="true"] .nav-links a { display: block; padding: .85rem 0; border-bottom: 1px solid var(--line-soft); width: 100%; }
   .nav[data-open="true"] .nav-links a::after { display: none; }
+  .nav[data-open="true"] .nav-links .has-dropdown::after { display: none; }
+  .nav[data-open="true"] .nav-links .dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; background: transparent; padding: 0 0 .3rem .9rem; margin: 0; min-width: 0; }
+  .nav[data-open="true"] .nav-links .dropdown a { padding: .6rem 0; font-weight: 600; }
   .nav-desktop-cta { display: none; }
 }
 
