@@ -83,9 +83,11 @@
 
       <!-- ============================================================
            EDIT PRICES HERE
-           Replace each "£—" with the figure from your Faces menu.
-           Add or remove <div class="price-row"> lines as needed.
-           Keep treatment names generic (no medicine brand names).
+           Each category is a .price-block (with an id used by the jump chips).
+           Inside, add/remove a price row:
+             &lt;div class="price-row"&gt;&lt;span class="name"&gt;Treatment&lt;/span&gt;&lt;span class="amt"&gt;£000&lt;/span&gt;&lt;/div&gt;
+           The two-column layout is automatic. Keep anti-wrinkle names generic
+           (no prescription-only medicine brand names).
            ============================================================ -->
 
       <nav class="price-jump" aria-label="Jump to a price category">
