@@ -310,6 +310,11 @@ a.card:hover h3 { color: var(--accent-deep); }
 .price-block { break-inside: avoid; -webkit-column-break-inside: avoid; margin-bottom: 1.9rem; scroll-margin-top: 92px; }
 .price-block h2 { margin-top: 0; }
 @media (max-width: 760px) { .price-columns { column-count: 1; } }
+/* Blog category filters */
+.blog-filters { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin: 2rem 0 .5rem; }
+.blog-filters button { font-family: var(--body); font-size: .9rem; font-weight: 700; color: var(--ink-soft); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: .5rem 1.05rem; cursor: pointer; transition: background .18s var(--ease), color .18s var(--ease), border-color .18s var(--ease); }
+.blog-filters button:hover { border-color: var(--accent); color: var(--ink); }
+.blog-filters button.is-active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 /* ---------- testimonials ---------- */
 .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.35rem; }
