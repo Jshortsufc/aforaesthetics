@@ -315,6 +315,19 @@ a.card:hover h3 { color: var(--accent-deep); }
 .blog-filters button { font-family: var(--body); font-size: .9rem; font-weight: 700; color: var(--ink-soft); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: .5rem 1.05rem; cursor: pointer; transition: background .18s var(--ease), color .18s var(--ease), border-color .18s var(--ease); }
 .blog-filters button:hover { border-color: var(--accent); color: var(--ink); }
 .blog-filters button.is-active { background: var(--accent); border-color: var(--accent); color: #fff; }
+/* Sticky mobile action bar (mobile only) */
+.mobile-bar { display: none; }
+@media (max-width: 760px) {
+  .mobile-bar { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; padding: .5rem .7rem calc(.5rem + env(safe-area-inset-bottom, 0px)); background: color-mix(in srgb, var(--surface) 92%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-top: 1px solid var(--line); }
+  .mobile-bar a { display: flex; align-items: center; justify-content: center; gap: .45rem; min-height: 48px; padding: .8rem; border-radius: 999px; font-weight: 700; font-size: 1rem; text-decoration: none; }
+  .mobile-bar a[href^="tel"] { background: var(--surface); border: 1px solid var(--line); color: var(--ink); }
+  .mobile-bar .mobile-bar-book { background: var(--accent); color: #fff; }
+  .mobile-bar a::after { display: none; }
+  body { padding-bottom: 74px; }
+}
+/* Author / reviewer byline */
+.byline { font-family: var(--body); font-size: .92rem; color: var(--ink-soft); margin: .4rem 0 0; }
+.byline a { color: var(--accent-deep); font-weight: 700; }
 
 /* ---------- testimonials ---------- */
 .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.35rem; }
