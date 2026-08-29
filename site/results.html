@@ -78,40 +78,79 @@
       </div>
 
       <!-- ============================================================
-           ADD BEFORE/AFTER IMAGES HERE
-           Drop each combined before→after image into /img/ and replace the
-           matching placeholder <div class="hero-media--placeholder"> with:
-             <img src="/img/result-lips-1.jpg" alt="Lip filler before and after — A for Aesthetics Sheffield" style="width:100%;border-radius:var(--radius);display:block">
-           Keep the <figcaption> label. Add or remove cards as needed.
-           COMPLIANCE: do NOT add before/after photos of anti-wrinkle /
+           BEFORE/AFTER GALLERY
+           Each card: WebP+JPG <picture>, click to enlarge in the lightbox.
+           To add a result: optimise a combined before→after image into /img/
+           (landscape, ~1200x740, both .webp and .jpg), then copy a <figure
+           class="ba-card"> block and update src/srcset/data-full/label/caption.
+           COMPLIANCE: NEVER add before/after photos of anti-wrinkle /
            botulinum toxin treatments — a prescription-only medicine cannot
-           be advertised. Fillers, skin boosters, fat dissolving are fine.
+           be advertised. Fillers, skin boosters and fat dissolving are fine.
            ============================================================ -->
 
-      <div class="grid grid-3" style="margin-top:2.5rem">
-        <figure class="card" style="margin:0">
-          <div class="hero-media hero-media--placeholder" role="img" aria-label="Lip filler before and after" style="aspect-ratio:3/4;border-radius:var(--radius-sm);max-width:100%">Before &amp; after<br>(/img/result-lips-1.jpg)</div>
-          <figcaption class="mini" style="margin-top:.8rem">Lip enhancement</figcaption>
+      <div class="ba-gallery">
+        <figure class="ba-card">
+          <button class="ba-figure" type="button" data-full="/img/result-lips-1.jpg" data-label="Lip filler" aria-label="Enlarge lip filler before and after">
+            <picture>
+              <source type="image/webp" srcset="/img/result-lips-1.webp">
+              <img src="/img/result-lips-1.jpg" width="1200" height="740" loading="lazy" decoding="async" alt="Lip filler before and after — A for Aesthetics Sheffield">
+            </picture>
+          </button>
+          <figcaption class="ba-caption"><span class="mini">Lip filler</span><p>Subtle enhancement that adds shape and definition while keeping the lips balanced and natural.</p></figcaption>
         </figure>
-        <figure class="card" style="margin:0">
-          <div class="hero-media hero-media--placeholder" role="img" aria-label="Lip filler before and after" style="aspect-ratio:3/4;border-radius:var(--radius-sm);max-width:100%">Before &amp; after<br>(/img/result-lips-2.jpg)</div>
-          <figcaption class="mini" style="margin-top:.8rem">Russian lip technique</figcaption>
+        <figure class="ba-card">
+          <button class="ba-figure" type="button" data-full="/img/result-cheeks-1.jpg" data-label="Cheek filler" aria-label="Enlarge cheek filler before and after">
+            <picture>
+              <source type="image/webp" srcset="/img/result-cheeks-1.webp">
+              <img src="/img/result-cheeks-1.jpg" width="1200" height="740" loading="lazy" decoding="async" alt="Cheek filler before and after — A for Aesthetics Sheffield">
+            </picture>
+          </button>
+          <figcaption class="ba-caption"><span class="mini">Cheek filler</span><p>Restored mid-face volume for a softer, subtly lifted profile.</p></figcaption>
         </figure>
-        <figure class="card" style="margin:0">
-          <div class="hero-media hero-media--placeholder" role="img" aria-label="Cheek filler before and after" style="aspect-ratio:3/4;border-radius:var(--radius-sm);max-width:100%">Before &amp; after<br>(/img/result-cheeks-1.jpg)</div>
-          <figcaption class="mini" style="margin-top:.8rem">Cheek enhancement</figcaption>
+        <figure class="ba-card">
+          <button class="ba-figure" type="button" data-full="/img/result-chin-1.jpg" data-label="Chin &amp; profile filler" aria-label="Enlarge chin filler before and after">
+            <picture>
+              <source type="image/webp" srcset="/img/result-chin-1.webp">
+              <img src="/img/result-chin-1.jpg" width="1200" height="727" loading="lazy" decoding="async" alt="Chin filler before and after — A for Aesthetics Sheffield">
+            </picture>
+          </button>
+          <figcaption class="ba-caption"><span class="mini">Chin &amp; profile</span><p>Improved chin projection for a more balanced side profile.</p></figcaption>
         </figure>
-        <figure class="card" style="margin:0">
-          <div class="hero-media hero-media--placeholder" role="img" aria-label="Tear trough treatment before and after" style="aspect-ratio:3/4;border-radius:var(--radius-sm);max-width:100%">Before &amp; after<br>(/img/result-tear-trough-1.jpg)</div>
-          <figcaption class="mini" style="margin-top:.8rem">Tear trough / under-eye</figcaption>
+        <figure class="ba-card">
+          <button class="ba-figure" type="button" data-full="/img/result-jaw-1.jpg" data-label="Jaw &amp; lip filler" aria-label="Enlarge jaw and lip filler before and after">
+            <picture>
+              <source type="image/webp" srcset="/img/result-jaw-1.webp">
+              <img src="/img/result-jaw-1.jpg" width="1200" height="740" loading="lazy" decoding="async" alt="Jawline and lip filler before and after — A for Aesthetics Sheffield">
+            </picture>
+          </button>
+          <figcaption class="ba-caption"><span class="mini">Jaw &amp; lips</span><p>Refined jawline definition alongside a naturally balanced lip.</p></figcaption>
         </figure>
-        <figure class="card" style="margin:0">
-          <div class="hero-media hero-media--placeholder" role="img" aria-label="Chin and jawline filler before and after" style="aspect-ratio:3/4;border-radius:var(--radius-sm);max-width:100%">Before &amp; after<br>(/img/result-jaw-1.jpg)</div>
-          <figcaption class="mini" style="margin-top:.8rem">Chin &amp; jawline</figcaption>
+        <figure class="ba-card">
+          <button class="ba-figure" type="button" data-full="/img/result-skin-1.jpg" data-label="Skin booster course" aria-label="Enlarge skin booster before and after">
+            <picture>
+              <source type="image/webp" srcset="/img/result-skin-1.webp">
+              <img src="/img/result-skin-1.jpg" width="1200" height="727" loading="lazy" decoding="async" alt="Skin booster before and after, improved skin quality and tone — A for Aesthetics Sheffield">
+            </picture>
+          </button>
+          <figcaption class="ba-caption"><span class="mini">Skin quality</span><p>Improved tone, texture and redness with a hydrating skin-booster course.</p></figcaption>
         </figure>
-        <figure class="card" style="margin:0">
-          <div class="hero-media hero-media--placeholder" role="img" aria-label="Skin booster before and after" style="aspect-ratio:3/4;border-radius:var(--radius-sm);max-width:100%">Before &amp; after<br>(/img/result-skin-1.jpg)</div>
-          <figcaption class="mini" style="margin-top:.8rem">Skin boosters</figcaption>
+        <figure class="ba-card">
+          <button class="ba-figure" type="button" data-full="/img/result-fatdissolve-1.jpg" data-label="Fat dissolving" aria-label="Enlarge fat dissolving before and after">
+            <picture>
+              <source type="image/webp" srcset="/img/result-fatdissolve-1.webp">
+              <img src="/img/result-fatdissolve-1.jpg" width="1200" height="740" loading="lazy" decoding="async" alt="Fat dissolving treatment before and after — A for Aesthetics Sheffield">
+            </picture>
+          </button>
+          <figcaption class="ba-caption"><span class="mini">Fat dissolving</span><p>Targeted treatment to reduce a stubborn pocket of fat on the abdomen.</p></figcaption>
+        </figure>
+        <figure class="ba-card ba-card--portrait">
+          <button class="ba-figure" type="button" data-full="/img/result-marionette-1.jpg" data-label="Marionette line filler" aria-label="Enlarge marionette line filler before and after">
+            <picture>
+              <source type="image/webp" srcset="/img/result-marionette-1.webp">
+              <img src="/img/result-marionette-1.jpg" width="900" height="1197" loading="lazy" decoding="async" alt="Marionette line dermal filler before and after — A for Aesthetics Sheffield">
+            </picture>
+          </button>
+          <figcaption class="ba-caption"><span class="mini">Marionette lines</span><p>Softened the folds running from the mouth to the chin for a smoother, refreshed lower face.</p></figcaption>
         </figure>
       </div>
 
@@ -178,6 +217,17 @@
     </div>
   </div>
 </footer>
+<div class="lb" data-open="false" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Enlarged before and after image">
+  <button class="lb-close" type="button" aria-label="Close">&times;</button>
+  <div class="lb-inner">
+    <img src="" alt="">
+    <p class="lb-cap"></p>
+  </div>
+</div>
 <script src="main.js"></script>
-<div class="mobile-bar" aria-label="Quick actions">\n  <a href="tel:+447758930674"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call</a>\n  <a class="mobile-bar-book" href="https://facesconsent.com/clinics/a-for-aesthetics-at-peaches-814378/aforaesthetics-1833?clinicName=aforaesthetics-1833">Book now</a>\n</div>\n</body>
+<div class="mobile-bar" aria-label="Quick actions">
+  <a href="tel:+447758930674"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call</a>
+  <a class="mobile-bar-book" href="https://facesconsent.com/clinics/a-for-aesthetics-at-peaches-814378/aforaesthetics-1833?clinicName=aforaesthetics-1833">Book now</a>
+</div>
+</body>
 </html>

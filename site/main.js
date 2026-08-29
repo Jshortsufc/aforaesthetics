@@ -17,6 +17,40 @@
     });
   }
 
+  // --- before/after lightbox ---
+  var lb = document.querySelector('.lb');
+  if (lb) {
+    var lbImg = lb.querySelector('img');
+    var lbCap = lb.querySelector('.lb-cap');
+    var lastFocus = null;
+    function openLb(src, label, desc) {
+      lastFocus = document.activeElement;
+      lbImg.src = src;
+      lbImg.alt = label + ' before and after — A for Aesthetics Sheffield';
+      lbCap.innerHTML = '<b>' + label + '</b> — before &amp; after. Genuine client, shared with consent.';
+      lb.setAttribute('data-open', 'true');
+      document.body.style.overflow = 'hidden';
+      lb.querySelector('.lb-close').focus();
+    }
+    function closeLb() {
+      lb.setAttribute('data-open', 'false');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    }
+    document.querySelectorAll('.ba-figure').forEach(function (fig) {
+      fig.addEventListener('click', function () {
+        openLb(fig.getAttribute('data-full'), fig.getAttribute('data-label'), '');
+      });
+    });
+    lb.addEventListener('click', function (e) {
+      if (e.target === lb || e.target.classList.contains('lb-close')) closeLb();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lb.getAttribute('data-open') === 'true') closeLb();
+    });
+  }
+
   // --- scroll reveal (skipped entirely if user prefers reduced motion) ---
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce || !('IntersectionObserver' in window)) return;
