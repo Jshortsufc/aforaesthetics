@@ -139,6 +139,65 @@
       </div>
     </div>
   </section>
+  <section class="section section--tint">
+    <div class="wrap">
+      <div class="center measure" style="margin-inline:auto">
+        <span class="eyebrow">Send us a message</span>
+        <h2>Have a question? Drop us a line.</h2>
+        <p class="lead">Fill in the form and we'll get back to you — usually within a day. To book straight away, use the online booking button instead.</p>
+      </div>
+      <div style="max-width:640px;margin:2.2rem auto 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.4rem,4vw,2.2rem);box-shadow:var(--shadow-sm)">
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-contact-form novalidate>
+          <!-- ============================================================
+               CONTACT FORM — powered by Web3Forms (no server needed).
+               ACTIVATE IT: sign up free at https://web3forms.com using
+               info@aforaesthetics.com, copy your Access Key, and paste it
+               below in place of REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY.
+               The access key is a PUBLIC key — safe to keep in this markup.
+               Submissions are emailed to the address on the Web3Forms account.
+               ============================================================ -->
+          <input type="hidden" name="access_key" value="REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="subject" value="New enquiry from the A for Aesthetics website">
+          <input type="hidden" name="from_name" value="A for Aesthetics website">
+          <!-- honeypot (hidden from people, catches bots) -->
+          <input type="checkbox" name="botcheck" class="form-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="form-row form-row--2">
+            <div class="field">
+              <label for="cf-name">Name <span class="req">*</span></label>
+              <input id="cf-name" type="text" name="name" required autocomplete="name" placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="cf-phone">Phone</label>
+              <input id="cf-phone" type="tel" name="phone" autocomplete="tel" placeholder="Optional">
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-email">Email <span class="req">*</span></label>
+            <input id="cf-email" type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="cf-location">Preferred clinic</label>
+            <select id="cf-location" name="preferred_clinic">
+              <option value="No preference">No preference</option>
+              <option value="Peaches — Hillsborough (S6)">Peaches — Hillsborough</option>
+              <option value="And Collective — Nether Edge (S7)">And Collective — Nether Edge</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message <span class="req">*</span></label>
+            <textarea id="cf-message" name="message" required placeholder="Tell us a little about what you're interested in…"></textarea>
+          </div>
+          <p class="form-note">Please don't include sensitive medical details here — we'll go through those privately at your consultation. By sending this you agree to our <a href="/privacy-policy">Privacy Policy</a>.</p>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <p class="form-status" role="status" aria-live="polite" hidden></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="wrap">
       <div class="cta-band">

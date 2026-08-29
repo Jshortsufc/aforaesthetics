@@ -432,3 +432,29 @@ a.card:hover h3 { color: var(--accent-deep); }
   border: 1px solid rgba(255,255,255,.35); background: rgba(255,255,255,.12); color: #fff; font-size: 1.5rem; line-height: 1;
   cursor: pointer; display: grid; place-items: center; transition: background .2s var(--ease); }
 .lb-close:hover { background: rgba(255,255,255,.24); }
+
+/* ---------- contact form ---------- */
+.contact-form { display: grid; gap: 1.1rem; }
+.form-row { display: grid; gap: 1.1rem; }
+@media (min-width: 560px) { .form-row.form-row--2 { grid-template-columns: 1fr 1fr; } }
+.field { display: grid; gap: .4rem; }
+.field label { font-family: var(--body); font-size: .82rem; font-weight: 700; letter-spacing: .02em; color: var(--ink); }
+.field label .req { color: var(--accent-deep); }
+.field input, .field select, .field textarea {
+  font-family: var(--body); font-size: 1rem; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: .8rem .9rem; width: 100%; transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.field textarea { min-height: 130px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+.field input::placeholder, .field textarea::placeholder { color: color-mix(in srgb, var(--ink-soft) 75%, transparent); }
+.form-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.contact-form button[type="submit"]:disabled { opacity: .6; cursor: progress; }
+.form-note { font-size: .82rem; color: var(--ink-soft); margin: 0; }
+.form-status { font-size: .95rem; border-radius: var(--radius-sm); padding: .9rem 1.1rem; margin: 0; }
+.form-status--ok { background: color-mix(in srgb, #2F7D5B 12%, transparent); border: 1px solid color-mix(in srgb, #2F7D5B 40%, transparent); color: #245e45; }
+.form-status--err { background: color-mix(in srgb, var(--accent) 12%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); color: var(--accent-deep); }
