@@ -458,3 +458,11 @@ a.card:hover h3 { color: var(--accent-deep); }
 .form-status { font-size: .95rem; border-radius: var(--radius-sm); padding: .9rem 1.1rem; margin: 0; }
 .form-status--ok { background: color-mix(in srgb, #2F7D5B 12%, transparent); border: 1px solid color-mix(in srgb, #2F7D5B 40%, transparent); color: #245e45; }
 .form-status--err { background: color-mix(in srgb, var(--accent) 12%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); color: var(--accent-deep); }
+
+/* ---------- centre a lone final card in the treatments grid ---------- */
+@media (min-width: 901px) {
+  .services-grid > .card:last-child { grid-column: 2; }
+}
+@media (min-width: 621px) and (max-width: 900px) {
+  .services-grid > .card:last-child { grid-column: 1 / -1; max-width: calc(50% - 0.675rem); margin-inline: auto; }
+}
