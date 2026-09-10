@@ -77,10 +77,10 @@
           cform.reset();
           setStatus('Thanks — your message has been sent. We\'ll be in touch shortly.', true);
         } else {
-          setStatus((json.message || 'Something went wrong.') + ' You can also email info@aforaesthetics.com.', false);
+          setStatus((json.message || 'Something went wrong.') + ' You can also email aforaesthetics@hotmail.com.', false);
         }
       }).catch(function () {
-        setStatus('Sorry — we couldn\'t send that just now. Please email info@aforaesthetics.com or call 07758 930674.', false);
+        setStatus('Sorry — we couldn\'t send that just now. Please email aforaesthetics@hotmail.com or call 07758 930674.', false);
       }).finally(function () {
         cbtn.disabled = false; cbtn.textContent = original;
       });
