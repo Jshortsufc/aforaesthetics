@@ -74,8 +74,10 @@
         body: JSON.stringify(data)
       }).then(function (r) { return r.json(); }).then(function (json) {
         if (json.success) {
-          cform.reset();
-          setStatus('Thanks — your message has been sent. We\'ll be in touch shortly.', true);
+          // Redirect to the thank-you page — its load records the Google Ads
+          // "Submit lead form" conversion.
+          window.location.href = '/thank-you-consultation';
+          return;
         } else {
           setStatus((json.message || 'Something went wrong.') + ' You can also email aforaesthetics@hotmail.com.', false);
         }
