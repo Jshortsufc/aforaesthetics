@@ -107,3 +107,42 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   targets.forEach(function (el) { io.observe(el); });
 })();
+
+/* --- Cookie consent banner (Google Consent Mode v2) --- */
+(function () {
+  var KEY = 'afa-consent';
+  var choice;
+  try { choice = localStorage.getItem(KEY); } catch (e) {}
+  if (choice === 'granted' || choice === 'denied') return; // already chosen
+
+  var banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-label', 'Cookie notice');
+  banner.innerHTML =
+    '<p>We use cookies to measure our advertising and understand how the site is used. ' +
+    'You can accept these or decline. See our <a href="/privacy-policy">Privacy Policy</a>.</p>' +
+    '<div class="cookie-actions">' +
+      '<button type="button" class="btn btn-ghost" data-consent="deny">Decline</button>' +
+      '<button type="button" class="btn btn-primary" data-consent="accept">Accept</button>' +
+    '</div>';
+
+  function setConsent(granted) {
+    try { localStorage.setItem(KEY, granted ? 'granted' : 'denied'); } catch (e) {}
+    if (granted && typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted', ad_user_data: 'granted',
+        ad_personalization: 'granted', analytics_storage: 'granted'
+      });
+    }
+    if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
+  }
+
+  function attach() {
+    document.body.appendChild(banner);
+    banner.querySelector('[data-consent="accept"]').addEventListener('click', function () { setConsent(true); });
+    banner.querySelector('[data-consent="deny"]').addEventListener('click', function () { setConsent(false); });
+  }
+  if (document.body) attach();
+  else document.addEventListener('DOMContentLoaded', attach);
+})();

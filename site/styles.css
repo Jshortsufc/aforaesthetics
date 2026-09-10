@@ -466,3 +466,12 @@ a.card:hover h3 { color: var(--accent-deep); }
 @media (min-width: 621px) and (max-width: 900px) {
   .services-grid > .card:last-child { grid-column: 1 / -1; max-width: calc(50% - 0.675rem); margin-inline: auto; }
 }
+
+/* --- Cookie consent banner --- */
+.cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 100; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .8rem 1.4rem; padding: 1rem 1.25rem calc(1rem + env(safe-area-inset-bottom, 0px)); background: color-mix(in srgb, var(--surface) 97%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-top: 1px solid var(--line); box-shadow: var(--shadow-lift); }
+.cookie-banner p { margin: 0; max-width: 620px; font-size: .88rem; line-height: 1.5; color: var(--ink-soft); }
+.cookie-banner p a { color: var(--accent-deep); text-decoration: underline; }
+.cookie-actions { display: flex; gap: .6rem; flex-shrink: 0; }
+.cookie-actions .btn { padding: .55rem 1.15rem; font-size: .9rem; }
+@media (max-width: 760px) { .cookie-banner { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); gap: .7rem; } }
+@media (max-width: 560px) { .cookie-actions { width: 100%; } .cookie-actions .btn { flex: 1; } }
