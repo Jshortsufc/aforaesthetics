@@ -111,9 +111,29 @@
 /* --- Cookie consent banner (Google Consent Mode v2) --- */
 (function () {
   var KEY = 'afa-consent';
+  var META_PIXEL_ID = '548824422421465';
+
+  // Meta Pixel loads only after consent (no Consent Mode equivalent), so it is
+  // injected here rather than in the page head.
+  function loadMetaPixel() {
+    if (window._afaPixelLoaded) return;
+    window._afaPixelLoaded = true;
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () { n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', META_PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+
   var choice;
   try { choice = localStorage.getItem(KEY); } catch (e) {}
-  if (choice === 'granted' || choice === 'denied') return; // already chosen
+  if (choice === 'granted') { loadMetaPixel(); return; } // consented previously
+  if (choice === 'denied') return;                       // declined previously
 
   var banner = document.createElement('div');
   banner.className = 'cookie-banner';
@@ -135,6 +155,7 @@
         ad_personalization: 'granted', analytics_storage: 'granted'
       });
     }
+    if (granted) loadMetaPixel();
     if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
   }
 
