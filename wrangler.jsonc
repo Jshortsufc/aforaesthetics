@@ -2,10 +2,16 @@
   // Cloudflare Workers config for the A for Aesthetics static site.
   // The build's deploy command (`npx wrangler deploy`) reads this to know
   // which Worker to update and that the website lives in the ./site folder.
+  // worker.js applies 301 redirects for old WordPress URLs, then serves the
+  // static assets via the ASSETS binding. run_worker_first ensures the
+  // redirect logic runs on every request before assets are served.
   "name": "aforaesthetics",
   "compatibility_date": "2025-01-01",
+  "main": "worker.js",
   "assets": {
     "directory": "./site",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": true
   }
 }
