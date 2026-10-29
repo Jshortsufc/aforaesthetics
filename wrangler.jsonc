@@ -8,6 +8,10 @@
   "name": "aforaesthetics",
   "compatibility_date": "2025-01-01",
   "main": "worker.js",
+  // Meta Pixel / dataset ID used by the Conversions API endpoint in worker.js.
+  // The access token is NOT stored here: add it in Cloudflare as a secret
+  // named META_CAPI_TOKEN (Worker > Settings > Variables and Secrets).
+  "vars": { "META_PIXEL_ID": "548824422421465" },
   "assets": {
     "directory": "./site",
     "binding": "ASSETS",

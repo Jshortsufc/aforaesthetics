@@ -74,6 +74,12 @@
         body: JSON.stringify(data)
       }).then(function (r) { return r.json(); }).then(function (json) {
         if (json.success) {
+          // Meta Lead (browser Pixel + Conversions API, deduplicated by event ID).
+          // Only sent when the visitor has accepted cookies.
+          if (window.afaTrack) {
+            window.afaTrack('Lead', { content_name: 'Website enquiry', lead_source: data.preferred_clinic || '' },
+              { email: data.email || '', phone: data.phone || '' });
+          }
           // Redirect to the thank-you page — its load records the Google Ads
           // "Submit lead form" conversion.
           window.location.href = '/thank-you-consultation';
@@ -168,4 +174,58 @@
   }
   if (document.body) attach();
   else document.addEventListener('DOMContentLoaded', attach);
+})();
+
+/* --- Conversion tracking: booking clicks, calls/emails, enquiries ---
+   Sends standard Meta events through the browser Pixel AND the site's own
+   /api/meta-event endpoint (Conversions API, see worker.js). Both carry the same
+   event ID so Meta counts each action once. Nothing is sent unless the visitor
+   accepted cookies. Google gets matching GA4/Ads events via gtag (Consent Mode). */
+(function () {
+  function consented() {
+    try { return localStorage.getItem('afa-consent') === 'granted'; } catch (e) { return false; }
+  }
+  function newId() {
+    return 'afa-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
+  }
+
+  // eventName: Meta standard event. params: custom_data. user: {email, phone} (Lead only).
+  window.afaTrack = function (eventName, params, user) {
+    if (!consented()) return;
+    var id = newId();
+    params = params || {};
+    try { if (typeof fbq === 'function') fbq('track', eventName, params, { eventID: id }); } catch (e) {}
+    var body = JSON.stringify({
+      event_name: eventName,
+      event_id: id,
+      event_source_url: location.href,
+      custom_data: params,
+      user: user || {}
+    });
+    try {
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon('/api/meta-event', new Blob([body], { type: 'application/json' }));
+      } else {
+        fetch('/api/meta-event', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true });
+      }
+    } catch (e) {}
+  };
+
+  // One listener for every link on every page.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var label = (a.textContent || '').trim().slice(0, 60);
+    if (href.indexOf('facesconsent.com') !== -1) {
+      // Hand-off to online booking: the strongest intent signal we can see.
+      window.afaTrack('Schedule', { content_name: label || 'Book now', page: location.pathname });
+      try { if (typeof gtag === 'function') gtag('event', 'book_click', { link_text: label, page_path: location.pathname }); } catch (err) {}
+    } else if (href.indexOf('tel:') === 0) {
+      window.afaTrack('Contact', { content_name: 'Phone call', page: location.pathname });
+      try { if (typeof gtag === 'function') gtag('event', 'phone_click', { page_path: location.pathname }); } catch (err) {}
+    } else if (href.indexOf('mailto:') === 0 || href.indexOf('wa.me') !== -1) {
+      window.afaTrack('Contact', { content_name: href.indexOf('wa.me') !== -1 ? 'WhatsApp' : 'Email', page: location.pathname });
+    }
+  }, true);
 })();
