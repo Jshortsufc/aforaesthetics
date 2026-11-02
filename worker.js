@@ -33,6 +33,12 @@ const REDIRECTS = {
   "/anti-wrinkle-injections-chesterfield": "/anti-wrinkle-injections",
   "/anti-wrinkle-injections-barnsley": "/anti-wrinkle-injections",
   "/anti-wrinkle-injections-doncaster": "/anti-wrinkle-injections",
+  // Old paid-ad / WordPress landing paths that were returning 404.
+  "/sheffield/consultation": "/contact",
+  "/sheffield": "/contact",
+  "/consultation": "/contact",
+  "/book": "/contact",
+  "/booking": "/contact",
 };
 
 const META_API_VERSION = "v23.0";
