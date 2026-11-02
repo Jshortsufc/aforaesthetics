@@ -21,6 +21,18 @@ const REDIRECTS = {
   "/treatments": "/advanced-treatments",
   "/wanting-plump-cheeks-fillers-will-do-the-trick": "/dermal-fillers",
   "/home": "/",
+  "/lip-fillers-rotherham": "/lip-fillers",
+  "/lip-fillers-chesterfield": "/lip-fillers",
+  "/lip-fillers-barnsley": "/lip-fillers",
+  "/lip-fillers-doncaster": "/lip-fillers",
+  "/dermal-fillers-rotherham": "/dermal-fillers",
+  "/dermal-fillers-chesterfield": "/dermal-fillers",
+  "/skin-boosters-rotherham": "/skin-boosters",
+  "/skin-boosters-chesterfield": "/skin-boosters",
+  "/anti-wrinkle-injections-rotherham": "/anti-wrinkle-injections",
+  "/anti-wrinkle-injections-chesterfield": "/anti-wrinkle-injections",
+  "/anti-wrinkle-injections-barnsley": "/anti-wrinkle-injections",
+  "/anti-wrinkle-injections-doncaster": "/anti-wrinkle-injections",
 };
 
 const META_API_VERSION = "v23.0";
