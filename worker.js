@@ -39,6 +39,12 @@ const REDIRECTS = {
   "/consultation": "/contact",
   "/book": "/contact",
   "/booking": "/contact",
+  // Old WordPress client-result / treatment pages still indexed as 404 (GSC, Nov 2026).
+  "/enhancing-lips-for-chloe": "/lip-fillers",
+  "/luscious-lips-for-olivia": "/lip-fillers",
+  "/lips-lips-lips": "/lip-fillers",
+  "/anti-wrinkle-treatment-feedback-angela": "/anti-wrinkle-injections",
+  "/anti-wrinkle-anti-ageing-advance-treatments": "/anti-wrinkle-injections",
 };
 
 const META_API_VERSION = "v23.0";
